@@ -12,9 +12,12 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 
 app.get('/api/posts', function(req, res) {
-  // TODO - your code here!
+  Post.find()
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(500).send(err));
 });
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
+//fe
