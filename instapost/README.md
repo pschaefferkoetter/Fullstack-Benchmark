@@ -30,7 +30,13 @@ You will create a full-stack application that implements several features for a 
 
 HOW TO START THIS APP
 
-- _[Modify this section to tell graders how to start your app]_
+- open a terminal an navigate to the `.\instapost` directory
+- run `npm install`
+- type `mongod` and press enter then run `npm run db:setup`
+- seed a database by running the command `npm run db:setup`
+- open another terminal in the `.\instapost` directory and run `npm run dev:react`
+- open another terminal in the `.\instapost` directory and run `npm start`
+- navigate to `localhost:3000` on your webbrowser
 
 **Commit frequently** with informative messages. While there are instructions to commit at the end of each step, these should not be your only commits.
 
