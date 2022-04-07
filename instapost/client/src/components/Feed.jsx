@@ -5,8 +5,6 @@ import moment from 'moment';
 
 const Feed = function(props) {
 
-  console.log(props);
-
   //sort data in reverse chronological order
   let feedData = props.feedData;
   feedData.sort((a, b) => {

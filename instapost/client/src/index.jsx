@@ -26,9 +26,6 @@ class App extends React.Component {
     this.getPostData();
   }
 
-
-  //grgr
-
   render() {
     return (
       <div>

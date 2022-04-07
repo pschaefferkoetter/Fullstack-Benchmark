@@ -35,7 +35,6 @@ class Create extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     return (
       <form className="create" onSubmit={this.handleSubmit}>
         <h3>Add a Post!</h3>

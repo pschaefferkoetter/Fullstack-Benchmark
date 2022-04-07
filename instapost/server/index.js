@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-
 app.get('/api/posts', function(req, res) {
   Post.find()
     .then(data => res.status(200).send(data))
@@ -31,13 +30,6 @@ app.post('/api/posts/', function(req, res) {
     .catch(err => res.status(500).send(err));
 });
 
-
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
-
-
-// console.log(req.body);
-// Post.findByIdAndUpdate(req.params.id, {likes: 5})
-//   .then(()=>res.sendStatus(201))
-//   .catch(err => res.status(500).send(err));

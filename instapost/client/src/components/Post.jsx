@@ -21,7 +21,6 @@ class Post extends React.Component {
     });
   }
 
-
   updateLikes () {
     this.setState({likes: this.state.likes + 1}, () => {
       axios.patch(`api/posts/${this.props.postItem._id}`, {
