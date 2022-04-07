@@ -39,7 +39,10 @@ class App extends React.Component {
         </div>
 
         <div className="main">
-          {this.state.feedData && <Feed feedData = {this.state.feedData}/>}
+          {this.state.feedData && <Feed
+            feedData = {this.state.feedData}
+            getPostData = {this.getPostData}
+          />}
         </div>
       </div>
     );

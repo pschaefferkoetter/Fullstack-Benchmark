@@ -21,17 +21,16 @@ class Post extends React.Component {
     });
   }
 
-  updateLikes () {
-    this.setState({
-      likes: this.state.likes + 1
-    });
-    axios.patch(`api/posts/${this.props.postItem._id}`, {
-      likes: this.state.likes
-    })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
-  }
 
+  updateLikes () {
+    this.setState({likes: this.state.likes + 1}, () => {
+      axios.patch(`api/posts/${this.props.postItem._id}`, {
+        likes: this.state.likes
+      })
+        .then(result => console.log('success'))
+        .catch(err => console.log(err));
+    });
+  }
 
   render () {
     let postItem = this.props.postItem;

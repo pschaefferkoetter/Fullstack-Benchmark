@@ -18,10 +18,16 @@ app.get('/api/posts', function(req, res) {
 });
 
 app.patch('/api/posts/:postId', function(req, res) {
-  console.log(req.params.postId);
-  console.log(req.body);
   Post.findByIdAndUpdate(req.params.postId, req.body)
-    .then(data => res.status(200).send(data))
+    .then(data => res.status(201).send(data))
+    .catch(err => res.status(500).send(err));
+});
+
+app.post('/api/posts/', function(req, res) {
+  console.log(req.body.data);
+  let newPost = new Post(req.body.data);
+  newPost.save()
+    .then(data => res.status(201).send(data))
     .catch(err => res.status(500).send(err));
 });
 

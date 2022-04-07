@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "./Post.jsx";
+import Create from './Create.jsx';
 import moment from 'moment';
 
 const Feed = function(props) {
@@ -17,11 +18,16 @@ const Feed = function(props) {
 
   return (
     <div className='feed'>
-      {/* section for post form */}
+      <Create
+        feedData = {props.feedData}
+        getPostData = {props.getPostData}
+      />
 
-      {/* section for all posts */}
       {feedData.map((postItem) => {
-        return <Post key = {postItem._id} postItem = {postItem} />;
+        return <Post
+          key = {postItem._id}
+          postItem = {postItem}
+        />;
       })}
     </div>
   );
