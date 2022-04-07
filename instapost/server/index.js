@@ -17,7 +17,21 @@ app.get('/api/posts', function(req, res) {
     .catch(err => res.status(500).send(err));
 });
 
+app.patch('/api/posts/:postId', function(req, res) {
+  console.log(req.params.postId);
+  console.log(req.body);
+  Post.findByIdAndUpdate(req.params.postId, req.body)
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(500).send(err));
+});
+
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
-//fe
+
+
+// console.log(req.body);
+// Post.findByIdAndUpdate(req.params.id, {likes: 5})
+//   .then(()=>res.sendStatus(201))
+//   .catch(err => res.status(500).send(err));
